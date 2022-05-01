@@ -8,18 +8,21 @@ Revision History:
 """
 
 from fastapi import APIRouter
-from schema import input_schema
-from schema import output_schema
-from models.make_prediction import make_prediction
+from models import input_pydantic_model, output_pydantic_model
+from utils.make_prediction import make_prediction
 
 
 def create_router(model):
     
+    # initialize a router
     router = APIRouter(responses={404: {"description": "Not found"}},)
     
+    # initialize POST request for router
     @router.post("/template")
-    async def router_template(inputs: input_schema.MainModel):
+    async def router_template(inputs: input_pydantic_model.MainModel):
+        
         outputs = make_prediction(model, inputs.dict())
-        return output_schema.MainModel(**outputs)
+        
+        return output_pydantic_model.MainModel(**outputs)
     
     return router

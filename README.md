@@ -20,6 +20,7 @@ pip freeze > requirements.txt
 ```
 ```
 pytest -v
+pytest -cov
 ```
 ```
 git init

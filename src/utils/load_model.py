@@ -7,11 +7,13 @@ Revision History:
 
 """
 
-from fastapi import HTTPException
+import traceback
+import logging
 
 
 def load_model():
     try:
         return None
     except:
-        raise HTTPException(status_code=500, detail="Internal Server Error")
+        logging.error(traceback.format_exc())
+        return None

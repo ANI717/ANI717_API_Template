@@ -10,7 +10,7 @@ Revision History:
 from fastapi import FastAPI
 
 from routers import router_template
-from models.load_model import load_model
+from utils.load_model import load_model
 
 
 model = load_model()
