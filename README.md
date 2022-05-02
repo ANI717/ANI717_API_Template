@@ -1,4 +1,11 @@
-# ANI717 API Template
+<p align="center">
+  <h1 align="center">ANI717 API Template</h1>
+</p>
+
+<p align="center">
+FastAPI Template for MLOps development.
+</p>
+
 ```
 uvicorn main:app --reload
 ```
