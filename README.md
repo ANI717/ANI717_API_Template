@@ -3,6 +3,12 @@
 uvicorn main:app --reload
 ```
 ```
+pytest -v
+pytest --markers
+pytest -v -m utils
+pytest -v -m app
+```
+```
 pip install pyclean
 pyclean --verbose .
 ```
@@ -17,12 +23,6 @@ conda env remove -n ENV_NAME
 ```
 ```
 pip freeze > requirements.txt
-```
-```
-pytest -v
-pytest --markers
-pytest -v -m utils
-pytest -v -m app
 ```
 ```
 docker image build -t my-first-api .
