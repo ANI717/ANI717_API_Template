@@ -8,8 +8,8 @@ Revision History:
 """
 
 from fastapi import APIRouter
-from models import input_pydantic_model, output_pydantic_model
-from utils.make_prediction import make_prediction
+from ani717_api_template.models import input_pydantic_model, output_pydantic_model
+from ani717_api_template.utils.make_prediction import make_prediction
 
 
 def create_router(model):

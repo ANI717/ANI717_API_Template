@@ -21,8 +21,9 @@ class DetailedInfo(BaseModel):
                       410,411,412,413,414,415,416,417,
                       418,421,422,423,424,425,426,428,429,431,451,
                       500,501,502,503,504,505,506,507,508,510,511] = Field(200)
-  mime_type: Literal['text/html'] = Field('text/html')
-  url: AnyUrl = Field('https://animeshani.com/')
+  mime_type: Literal["text/html",
+                     "text/markdown"] = Field("text/html")
+  url: AnyUrl = Field("https://animeshani.com/")
 
 class MainModel(BaseModel):
     name: str

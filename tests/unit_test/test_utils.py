@@ -35,13 +35,13 @@ def load_io(inputs_path, outputs_path):
 # functions for pytesting
 @pytest.mark.utils
 def test_load_model():    
-    from utils.load_model import load_model
+    from ani717_api_template.utils.load_model import load_model
     assert load_model() == None
 
 @pytest.mark.utils
 def test_make_prediction(inputs_path=INPUTS_PATH, outputs_path=OUTPUTS_PATH):
-    from utils.load_model import load_model
-    from utils.make_prediction import make_prediction
+    from ani717_api_template.utils.load_model import load_model
+    from ani717_api_template.utils.make_prediction import make_prediction
     inputs, outputs = load_io(inputs_path, outputs_path)
     assert make_prediction(load_model(), inputs) == outputs
     
