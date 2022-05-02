@@ -96,4 +96,3 @@ if __name__ == "__main__":
     test_with_wrong_url()
     test_with_wrong_http_status()
     test_with_wrong_mime_type()
-    
