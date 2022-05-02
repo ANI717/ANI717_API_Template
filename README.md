@@ -2,8 +2,8 @@
   <h1 align="center">ANI717 API Template</h1>
 </p>
 
-<p align="center">
-FastAPI Template for MLOps development.
+<p align="justify">
+A Python Fast API Template for Machine Learning Applications to Receive HTTP POST Request and Respond Accordingly.
 </p>
 
 ```
