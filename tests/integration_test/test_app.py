@@ -13,12 +13,16 @@ import requests
 
 
 API_URL = "http://127.0.0.1:8000/template"
-INPUTS_PATH = './tests/resources/input.json'
-OUTPUTS_PATH = './tests/resources/output.json'
 HEADERS = {"Content-Type":"application/json"}
+if __name__ == '__main__':
+    INPUTS_PATH = '../resources/input.json'
+    OUTPUTS_PATH = '../resources/output.json'
+else:
+    INPUTS_PATH = './tests/resources/input.json'
+    OUTPUTS_PATH = './tests/resources/output.json'
 
 
-
+# load input and output data
 def load_io(inputs_path, outputs_path):
     with open(inputs_path) as f:
         inputs = json.load(f)
@@ -27,7 +31,7 @@ def load_io(inputs_path, outputs_path):
     return inputs, outputs
 
 
-
+# functions for pytesting
 @pytest.mark.app
 def test_with_get_request():
     response = requests.get(API_URL)
@@ -84,16 +88,12 @@ def test_with_wrong_mime_type(inputs_path=INPUTS_PATH, outputs_path=OUTPUTS_PATH
 
 
 if __name__ == "__main__":
-    inputs_path = '../resources/input.json'
-    outputs_path = '../resources/output.json'
-    
     test_with_get_request()
     test_with_no_input()
-    test_with_true_input(inputs_path, outputs_path)
-    test_with_additional_keys(inputs_path, outputs_path)
-    
-    test_with_missing_key(inputs_path, outputs_path)
-    test_with_wrong_url(inputs_path, outputs_path)
-    test_with_wrong_http_status(inputs_path, outputs_path)
-    test_with_wrong_mime_type(inputs_path, outputs_path)
+    test_with_true_input()
+    test_with_additional_keys()    
+    test_with_missing_key()
+    test_with_wrong_url()
+    test_with_wrong_http_status()
+    test_with_wrong_mime_type()
     

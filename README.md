@@ -20,26 +20,9 @@ pip freeze > requirements.txt
 ```
 ```
 pytest -v
-```
-```
-git init
-git status
-git add README.md
-git commit -m "first commit"
-git branch
-git branch -M main
-git log
-git checkout -b dev
-git checkout main
-git merge dev
-git branch -D dev
-git remote add origin https://github.com/ANI717/ANI717_API_Template.git
-git remote
-git push -u origin main
-git branch -r
-git clone https://github.com/ANI717/ANI717_API_Template.git
-git push
-git remote rm origin
+pytest --markers
+pytest -v -m utils
+pytest -v -m app
 ```
 ```
 docker image build -t my-first-api .
