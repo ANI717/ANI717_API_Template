@@ -2,10 +2,11 @@
   <h1 align="center">ANI717 API Template</h1>
 </p>
 
-<p align="justify">
+<p align="center">
 A Python Fast API Template for Machine Learning Applications to Receive HTTP POST Request and Respond Accordingly.
 </p>
 
+## Run the API
 ```
 git clone https://github.com/ANI717/ANI717_API_Template.git
 cd ANI717_API_Template
@@ -15,6 +16,7 @@ pip install --upgrade pip
 pip install .
 uvicorn ani717_api_template.main:app
 ```
+## Development
 ```
 uvicorn main:app --reload
 ```
