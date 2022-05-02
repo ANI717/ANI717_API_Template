@@ -7,6 +7,15 @@ A Python Fast API Template for Machine Learning Applications to Receive HTTP POS
 </p>
 
 ```
+git clone https://github.com/ANI717/ANI717_API_Template.git
+cd ANI717_API_Template
+conda create -n api python==3.9.7 -y
+conda activate api
+pip install --upgrade pip
+pip install .
+uvicorn ani717_api_template.main:app
+```
+```
 uvicorn main:app --reload
 ```
 ```
@@ -14,6 +23,11 @@ pytest -v
 pytest --markers
 pytest -v -m utils
 pytest -v -m app
+```
+```
+pip install --upgrade pip
+pip install --upgrade build
+python -m build
 ```
 ```
 pip install pyclean

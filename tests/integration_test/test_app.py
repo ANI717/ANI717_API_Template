@@ -32,24 +32,24 @@ def load_io(inputs_path, outputs_path):
 
 
 # functions for pytesting
-@pytest.mark.app
+@pytest.mark.api
 def test_with_get_request():
     response = requests.get(API_URL)
     assert response.status_code == 405
 
-@pytest.mark.app
+@pytest.mark.api
 def test_with_no_input():
     response = requests.post(API_URL)
     assert response.status_code == 422
 
-@pytest.mark.app
+@pytest.mark.api
 def test_with_true_input(inputs_path=INPUTS_PATH, outputs_path=OUTPUTS_PATH):
     inputs, outputs = load_io(inputs_path, outputs_path)
     response = requests.post(API_URL, data=json.dumps(inputs), headers=HEADERS)
     assert response.status_code == 200
     assert response.json() == outputs
 
-@pytest.mark.app
+@pytest.mark.api
 def test_with_additional_keys(inputs_path=INPUTS_PATH, outputs_path=OUTPUTS_PATH):
     inputs, outputs = load_io(inputs_path, outputs_path)
     inputs['email'] = 'animesh.ani@live.com'
@@ -57,28 +57,28 @@ def test_with_additional_keys(inputs_path=INPUTS_PATH, outputs_path=OUTPUTS_PATH
     assert response.status_code == 200
     assert response.json() == outputs
 
-@pytest.mark.app
+@pytest.mark.api
 def test_with_missing_key(inputs_path=INPUTS_PATH, outputs_path=OUTPUTS_PATH):
     inputs, outputs = load_io(inputs_path, outputs_path)
     inputs.pop('name')
     response = requests.post(API_URL, data=json.dumps(inputs), headers=HEADERS)
     assert response.status_code == 422
 
-@pytest.mark.app
+@pytest.mark.api
 def test_with_wrong_url(inputs_path=INPUTS_PATH, outputs_path=OUTPUTS_PATH):
     inputs, outputs = load_io(inputs_path, outputs_path)
     inputs['detailed_info'][0]['url'] = 'ANI717'
     response = requests.post(API_URL, data=json.dumps(inputs), headers=HEADERS)
     assert response.status_code == 422
 
-@pytest.mark.app
+@pytest.mark.api
 def test_with_wrong_http_status(inputs_path=INPUTS_PATH, outputs_path=OUTPUTS_PATH):
     inputs, outputs = load_io(inputs_path, outputs_path)
     inputs['detailed_info'][0]['http_status'] = 'ANI717'
     response = requests.post(API_URL, data=json.dumps(inputs), headers=HEADERS)
     assert response.status_code == 422
 
-@pytest.mark.app
+@pytest.mark.api
 def test_with_wrong_mime_type(inputs_path=INPUTS_PATH, outputs_path=OUTPUTS_PATH):
     inputs, outputs = load_io(inputs_path, outputs_path)
     inputs['detailed_info'][0]['mime_type'] = 'ANI717'
