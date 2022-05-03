@@ -13,6 +13,9 @@ import setuptools
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
+with open("requirements.txt", "r") as fp:
+    requirements = fp.read().split('\n')
+
 
 setuptools.setup(
     name="ani717-api-template",
@@ -34,8 +37,5 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     python_requires=">=3.9.7",
-    install_requires=[
-        'fastapi',
-        'uvicorn'
-        ],
+    install_requires=requirements,
 )
