@@ -16,6 +16,8 @@ pip install --upgrade pip
 pip install .
 uvicorn ani717_api_template.main:app
 ```
+### [Swagger UI](http://127.0.0.1:8000/docs)
+### [Redoc](http://127.0.0.1:8000/redoc)
 ## Development
 ```
 uvicorn main:app --reload
