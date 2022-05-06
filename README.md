@@ -16,6 +16,16 @@ pip install --upgrade pip
 pip install .
 uvicorn ani717_api_template.main:app
 ```
+## Test the API and Generate Coverage Report (While the API is Running)
+```
+cd ANI717_API_Template
+conda create -n test_api python==3.9.7 -y
+conda activate test_api
+pip install --upgrade pip
+pip install fastapi requests pytest coverage pytest-cov
+pytest -v
+pytest --cov
+```
 ### [Swagger UI](http://127.0.0.1:8000/docs)
 ### [Redoc](http://127.0.0.1:8000/redoc)
 ## Development
