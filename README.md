@@ -6,28 +6,30 @@
 A Python Fast API Template for Machine Learning Applications to Receive HTTP POST Request and Respond Accordingly.
 </p>
 
-## Run the API
+## Clone the Repo and Install Dependencies
+Python Required >= 3.9.7
 ```
 git clone https://github.com/ANI717/ANI717_API_Template.git
 cd ANI717_API_Template
-conda create -n api python==3.9.7 -y
-conda activate api
 pip install --upgrade pip
 pip install .
+```
+## Run the API
+```
 uvicorn ani717_api_template.main:app
 ```
-## Test the API and Generate Coverage Report (While the API is Running)
+#### [Swagger UI](http://127.0.0.1:8000/docs)</br>
+#### [Redoc](http://127.0.0.1:8000/redoc)</br>
+## Test the API
 ```
-cd ANI717_API_Template
-conda create -n test_api python==3.9.7 -y
-conda activate test_api
-pip install --upgrade pip
-pip install fastapi requests pytest coverage pytest-cov
+pip install requests pytest
 pytest -v
+```
+## Generate Coverage Report
+```
+pip install pytest-cov
 pytest --cov
 ```
-### [Swagger UI](http://127.0.0.1:8000/docs)
-### [Redoc](http://127.0.0.1:8000/redoc)
 ## Development
 ```
 uvicorn main:app --reload
