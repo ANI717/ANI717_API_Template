@@ -16,7 +16,7 @@ pip install --upgrade pip
 pip install .
 uvicorn ani717_api_template.main:app
 ```
-## Test the API with Coverage Report (While the API running)
+## Test the API and Generate Coverage Report (While the API running)
 ```
 cd ANI717_API_Template
 conda create -n test_api python==3.9.7 -y
