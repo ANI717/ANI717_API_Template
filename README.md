@@ -22,12 +22,10 @@ uvicorn ani717_api_template.main:app
 #### [Redoc](http://127.0.0.1:8000/redoc)</br>
 ## Test the API
 ```
-pip install requests pytest
 pytest -v
 ```
 ## Generate Coverage Report
 ```
-pip install pytest-cov
 pytest --cov
 ```
 ## Development
