@@ -16,7 +16,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="ani717-api-template",
-    version="0.0.1",
+    version="1.0.0",
     author="Animesh Bala Ani",
     author_email="animesh.ani@live.com",
     description="A Python Fast API Template for Machine Learning Applications to Receive HTTP POST Request and Respond Accordingly.",
