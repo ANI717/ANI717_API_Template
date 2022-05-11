@@ -28,34 +28,3 @@ pytest -v
 ```
 pytest --cov
 ```
-## Development
-```
-uvicorn main:app --reload
-```
-```
-pytest -v
-pytest --markers
-pytest -v -m utils
-pytest -v -m app
-```
-```
-pip install --upgrade pip
-pip install --upgrade build
-python -m build
-```
-```
-pip install pyclean
-pyclean --verbose .
-```
-```
-taskkill /f /im python.exe
-```
-```
-conda create -n ENV_NAME python=<python_version>
-conda activate ENV_NAME
-conda env list
-conda env remove -n ENV_NAME
-```
-```
-pip freeze > requirements.txt
-```
